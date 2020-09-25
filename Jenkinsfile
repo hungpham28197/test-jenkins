@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage ('test') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+                withMaven(jdk: 'java', maven: 'Maven') {
+                    sh 'mvn clean install' 
+                }
             }
         }
         stage('SSH') {
