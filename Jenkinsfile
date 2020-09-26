@@ -10,8 +10,8 @@ pipeline {
         }
         stage('SSH') {
             steps {
-                sshagent(['123456']) {
-                  sh 'ssh -o StrictHostKeyChecking=no -l admin 34.66.141.204 touch test.txt'
+                sshagent(['1234']) {
+                  sh 'ssh -o StrictHostKeyChecking=no -l root 202.92.6.130 touch test.txt'
                 }
             }
         }
