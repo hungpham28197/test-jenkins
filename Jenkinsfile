@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage ('test') {
-            steps {
-                withMaven(jdk: 'java', maven: 'Maven') {
-                    sh 'mvn clean install' 
-                }
-            }
-        }
         stage('SSH') {
             steps {
                 sshagent(['1234']) {
